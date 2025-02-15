@@ -2,14 +2,26 @@ package objektwerks
 
 import com.typesafe.scalalogging.LazyLogging
 
+import os.Path
+
 import ox.*
 
 import scalafx.application.Platform
 
 final class Store extends LazyLogging:
   val filesPath = os.home / ".speech" / "files"
-  os.makeDir.all(filesPath)
+  removeFiles()
+  makeFilesPathDir(filesPath)
   logger.info("Initialized store.")
+
+  def removeFiles(): Unit =
+    supervised:
+      if os.exists(filesPath) then
+        os.remove.all(filesPath)
+
+  def makeFilesPathDir(path: Path): Unit =
+    supervised:
+      os.makeDir.all(path)
 
   def writeFile(bytes: Array[Byte], name: String): String =
     supervised:
@@ -19,8 +31,3 @@ final class Store extends LazyLogging:
       os.write(path, bytes)
       logger.info(s"Write file: $uri")
       uri
-
-  def removeFiles(): Unit =
-    supervised:
-      if os.exists(filesPath) then
-        os.remove.all(filesPath)

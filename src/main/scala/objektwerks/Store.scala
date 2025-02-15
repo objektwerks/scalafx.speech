@@ -11,12 +11,12 @@ import scalafx.application.Platform
 final class Store extends LazyLogging:
   val filesPath = os.home / ".speech" / "files"
 
-  removeFiles()
+  removeFilesPathDir()
   makeFilesPathDir(filesPath)
-  
+
   logger.info("Initialized store.")
 
-  def removeFiles(): Unit =
+  def removeFilesPathDir(): Unit =
     supervised:
       assertNotInFxThread
       if os.exists(filesPath) then

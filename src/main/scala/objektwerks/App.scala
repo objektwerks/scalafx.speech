@@ -1,11 +1,13 @@
 package objektwerks
 
 import com.typesafe.config.ConfigFactory
-//import com.typesafe.scalalogging.LazyLogging
+import com.typesafe.scalalogging.LazyLogging
 
 import scalafx.application.JFXApp3
 
-object App extends JFXApp3:
+object App extends JFXApp3 with LazyLogging:
+  logger.info("Starting app ...")
+
   val config = ConfigFactory.load("/app.conf")
   val context = Context(config)
   val model = Model()

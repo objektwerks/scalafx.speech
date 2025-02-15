@@ -5,6 +5,8 @@ import scalafx.scene.Scene
 import scalafx.scene.layout.VBox
 
 final class View(model: Model):
+  println(model)
+  
   val rootPane = new VBox:
     spacing = 6
     padding = Insets(6)

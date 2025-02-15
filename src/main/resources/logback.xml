@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+    <timestamp key="timestamp" datePattern="yyyyMMdd'T'HHmmss"/>
     <appender name="file" class="ch.qos.logback.core.FileAppender">
-        <file>./target/app.log</file>
+        <file>${HOME}/.speech/logs/log.${timestamp}.txt</file>
         <append>true</append>
         <encoder>
             <pattern>%-5p: %d{ISO8601} [%t] %m%n</pattern>

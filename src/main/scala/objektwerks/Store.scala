@@ -10,14 +10,12 @@ import scalafx.application.Platform
 
 final class Store extends LazyLogging:
   os.makeDir.all( buildFilesPath() )
-
-  private val filesPath = buildFilesPath()
-
+  val filesPath = buildFilesPath()
   logger.info("Initialized store.")
 
-  private def buildFilesPath(): Path = os.home / ".speech" / "files"
+  def buildFilesPath(): Path = os.home / ".speech" / "files"
 
-  private def assertNotInFxThread: Unit = assert( !Platform.isFxApplicationThread, "Store operation called on Fx thread!" )
+  def assertNotInFxThread: Unit = assert( !Platform.isFxApplicationThread, "Store operation called on Fx thread!" )
 
   def writeFile(bytes: Array[Byte], file: String): Unit =
     supervised:

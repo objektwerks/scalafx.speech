@@ -1,6 +1,6 @@
 package objektwerks
 
-import com.google.cloud.texttospeech.v1.{AudioConfig, AudioEncoding, SynthesisInput, TextToSpeechClient, VoiceSelectionParams}
+import com.google.cloud.texttospeech.v1.{AudioConfig, AudioEncoding, SsmlVoiceGender, SynthesisInput, TextToSpeechClient, VoiceSelectionParams}
 
 import java.io.IOException
 
@@ -8,6 +8,7 @@ final class Speech:
   val voiceSelectionParams = VoiceSelectionParams
     .newBuilder()
     .setLanguageCode("en-US")
+    .setSsmlGender(SsmlVoiceGender.MALE)
     .build()
   val audioConfig = AudioConfig
     .newBuilder()

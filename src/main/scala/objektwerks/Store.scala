@@ -2,18 +2,14 @@ package objektwerks
 
 import com.typesafe.scalalogging.LazyLogging
 
-import os.Path
-
 import ox.*
 
 import scalafx.application.Platform
 
 final class Store extends LazyLogging:
-  os.makeDir.all( buildFilesPath() )
-  val filesPath = buildFilesPath()
+  val filesPath = os.home / ".speech" / "files"
+  os.makeDir.all(filesPath)
   logger.info("Initialized store.")
-
-  def buildFilesPath(): Path = os.home / ".speech" / "files"
 
   def assertNotInFxThread: Unit = assert( !Platform.isFxApplicationThread, "Store operation called on Fx thread!" )
 

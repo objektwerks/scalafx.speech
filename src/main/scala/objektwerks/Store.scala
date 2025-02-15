@@ -16,18 +16,22 @@ final class Store extends LazyLogging:
 
   def removeFiles(): Unit =
     supervised:
+      assertNotInFxThread
       if os.exists(filesPath) then
         os.remove.all(filesPath)
 
   def makeFilesPathDir(path: Path): Unit =
     supervised:
+      assertNotInFxThread
       os.makeDir.all(path)
 
   def writeFile(bytes: Array[Byte], name: String): String =
     supervised:
-      assert( !Platform.isFxApplicationThread, "Store operation called on Fx thread!" )
+      assertNotInFxThread
       val path = filesPath / name
       val uri = path.toIO.toURI.toString
       os.write(path, bytes)
       logger.info(s"Write file: $uri")
       uri
+
+  def assertNotInFxThread: Unit = assert( !Platform.isFxApplicationThread, "Store operation called on Fx thread!" )

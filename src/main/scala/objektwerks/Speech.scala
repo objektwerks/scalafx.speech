@@ -5,14 +5,16 @@ import com.google.cloud.texttospeech.v1.{AudioConfig, AudioEncoding, SynthesisIn
 final class Speech:
   val voiceSelectionParams = VoiceSelectionParams.newBuilder().setLanguageCode("en-US").build()
   val audioConfig = AudioConfig.newBuilder().setAudioEncoding(AudioEncoding.LINEAR16).build()
-  val textToSpeechClient = TextToSpeechClient.create()
 
-  def textToSpeech(text: String): List[Byte] =
+  def textToSpeech(text: String): Array[Byte] =
     val synthesisInput = SynthesisInput.newBuilder().setText(text).build()
-    val audioBytes = textToSpeechClient.synthesizeSpeech(
-      synthesisInput,
-      voiceSelectionParams,
-      audioConfig
-    ).getAudioContent()
-     .readAllBytes()
-    textToSpeechClient.close()
+    val textToSpeechClient = TextToSpeechClient.create()
+    try
+      textToSpeechClient.synthesizeSpeech(
+        synthesisInput,
+        voiceSelectionParams,
+        audioConfig
+      ).getAudioContent()
+       .toByteArray()
+    finally
+      textToSpeechClient.close()

@@ -2,6 +2,8 @@ package objektwerks
 
 import com.google.cloud.texttospeech.v1.{AudioConfig, AudioEncoding, SynthesisInput, TextToSpeechClient, VoiceSelectionParams}
 
+import java.io.IOException
+
 final class Speech:
   val voiceSelectionParams = VoiceSelectionParams
     .newBuilder()
@@ -12,7 +14,7 @@ final class Speech:
     .setAudioEncoding(AudioEncoding.LINEAR16)
     .build()
 
-  def textToSpeech(text: String): Either[Exception, Array[Byte]] =
+  def textToSpeech(text: String): Either[IOException, Array[Byte]] =
     val synthesisInput = SynthesisInput
       .newBuilder()
       .setText(text)
@@ -27,6 +29,6 @@ final class Speech:
        .toByteArray()
       Right(bytes)
     catch
-      case error: Exception => Left(error)
+      case error: IOException => Left(error)
     finally
       textToSpeechClient.close()

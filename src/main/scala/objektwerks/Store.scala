@@ -22,4 +22,5 @@ final class Store extends LazyLogging:
 
   def removeFiles(): Unit =
     supervised:
-      os.remove.all(filesPath)
+      if os.exists(filesPath) then
+        os.remove.all(filesPath)

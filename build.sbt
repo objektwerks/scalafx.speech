@@ -4,7 +4,7 @@ version := "0.1-SNAPSHOT"
 scalaVersion := "3.6.4-RC1"
 libraryDependencies ++= {
   Seq(
-    "com.google.cloud" % "google-cloud-texttospeech" % "2.58.0",
+    "com.google.cloud" % "google-cloud-texttospeech" % "2.59.0",
     "org.scalafx" %% "scalafx" % "23.0.1-R34",
     "com.typesafe" % "config" % "1.4.3",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",

@@ -12,18 +12,21 @@ final class Speech:
     .setAudioEncoding(AudioEncoding.LINEAR16)
     .build()
 
-  def textToSpeech(text: String): Array[Byte] =
+  def textToSpeech(text: String): Either[Exception, Array[Byte]] =
     val synthesisInput = SynthesisInput
       .newBuilder()
       .setText(text)
       .build()
     val textToSpeechClient = TextToSpeechClient.create()
     try
-      textToSpeechClient.synthesizeSpeech(
+      val bytes = textToSpeechClient.synthesizeSpeech(
         synthesisInput,
         voiceSelectionParams,
         audioConfig
       ).getAudioContent()
        .toByteArray()
+      Right(bytes)
+    catch
+      case error: Exception => Left(error)
     finally
       textToSpeechClient.close()

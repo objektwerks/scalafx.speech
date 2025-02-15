@@ -19,3 +19,5 @@ final class Store extends LazyLogging:
       os.write(path, bytes)
       logger.info(s"Write file: $uri")
       uri
+
+  def removeFiles(): Unit = os.remove.all(filesPath)

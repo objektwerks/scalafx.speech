@@ -9,7 +9,7 @@ final class Context(config: Config):
   val windowWidth = config.getDouble("window.width")
   val windowHeight = config.getDouble("window.height")
 
-  def imageViewApp = loadImageView("/image/app.png")
+  def imageViewSpeech = loadImageView("/image/speech.png")
   def imageAppIcon = Image(Image.getClass.getResourceAsStream("/image/icon.png"))
 
   private def loadImageView(path: String): ImageView = new ImageView:

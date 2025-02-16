@@ -26,6 +26,7 @@ final class Store extends LazyLogging:
   def makeFilesPathDir(path: Path): Unit =
     supervised:
       assertNotInFxThread
+      logger.info(s"Make files path dir.")
       os.makeDir.all(path)
 
   def writeFile(bytes: Array[Byte], name: String): String =

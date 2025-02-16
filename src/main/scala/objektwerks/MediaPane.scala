@@ -22,6 +22,8 @@ final class MediaPane(context: Context, store: Store, speech: Speech) extends HB
     text = ""
 
   val buttonJoke = new Button():
+    prefHeight = 25
+    prefWidth = 75
     graphic = context.imageViewSpeech
     text = context.jokeButton
     onAction = { _ =>

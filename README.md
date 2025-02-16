@@ -1,6 +1,6 @@
 ScalaFx Speech
 --------------
->ScalaFx speech app.
+>ScalaFx text-to-speech app.
 
 Build
 -----

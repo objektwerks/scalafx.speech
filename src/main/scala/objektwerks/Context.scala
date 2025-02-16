@@ -13,7 +13,7 @@ final class Context(config: Config):
   val jokeError = config.getString("joke.error")
   val jokeButton = config.getString("joke.button")
 
-  val labelText = config.getString("label.text")
+  val labelJoke = config.getString("label.joke")
 
   def imageViewSpeech = loadImageView("/image/speech.png")
   def imageAppIcon = Image(Image.getClass.getResourceAsStream("/image/icon.png"))

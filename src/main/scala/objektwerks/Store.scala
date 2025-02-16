@@ -35,12 +35,12 @@ final class Store extends LazyLogging:
       logger.info(s"Write file: $uri")
       uri
 
-  def readFile(file: String): String =
+  def readFile(file: String): Array[Byte] =
     supervised:
       assertNotInFxThread
       val fileAsString = os.read(filesPath / file)
       logger.info(s"Read file: $fileAsString")
-      fileAsString
+      fileAsString.getBytes()
 
   def listFiles: List[String] =
     supervised:

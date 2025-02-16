@@ -5,4 +5,8 @@ import org.scalatest.matchers.should.Matchers
 
 class StoreTest extends AnyFunSuite with Matchers:
   test("store"):
-    println("TODO")
+    val path = os.pwd / "src" / "test" / "resources" / "test.mp3"
+    val bytes = os.read(path).getBytes()
+
+    val store = Store()
+    store.writeFile(bytes, "test.mp3")

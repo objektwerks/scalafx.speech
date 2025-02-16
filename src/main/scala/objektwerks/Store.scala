@@ -31,7 +31,7 @@ final class Store extends LazyLogging:
       assertNotInFxThread
       val path = filesPath / name
       val uri = path.toIO.toURI.toString
-      os.write(path, bytes)
+      os.write.over(path, bytes)
       logger.info(s"Write file: $uri")
       uri
 

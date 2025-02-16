@@ -5,18 +5,15 @@ import java.time.Instant
 import scalafx.geometry.Insets
 import scalafx.scene.control.{Button, Label, TextArea}
 import scalafx.scene.layout.{Priority, VBox}
-import scalafx.scene.media.{Media, MediaPlayer, MediaView}
+import scalafx.scene.media.{Media, MediaPlayer}
 
 final class MediaPane(context: Context,
                       store: Store,
                       speech: Speech) extends VBox:
   val uri = store.writeFile(context.loadAppMp3, context.appMp3)
   val media = Media(uri)
-  val mediaPlayer = new MediaPlayer(media):
+  var mediaPlayer = new MediaPlayer(media):
     autoPlay = true
-  val mediaView = new MediaView(mediaPlayer):
-    fitHeight = 50
-    fitWidth = 300
   
   val labelJoke = new Label():
     prefHeight = 25
@@ -38,16 +35,15 @@ final class MediaPane(context: Context,
       speech.textToSpeech(joke) match
         case Left(error) => textJoke.text = error.getMessage
         case Right(bytes) => 
+          mediaPlayer.dispose()
           val uri = store.writeFile(bytes, s"${Instant.now.toString}.mp3")
           val media = Media(uri)
-          val player = MediaPlayer(media)
-          mediaView.mediaPlayer.value.dispose()
-          mediaView.mediaPlayer.value = player
-          player.play()
+          mediaPlayer = new MediaPlayer(media):
+            autoPlay = true
     }
 
   padding = Insets(3, 3, 3, 3)
   spacing = 6
-  children = List(labelJoke, textJoke, mediaView, buttonJoke)
+  children = List(labelJoke, textJoke, buttonJoke)
 
   VBox.setVgrow(this, Priority.Always)

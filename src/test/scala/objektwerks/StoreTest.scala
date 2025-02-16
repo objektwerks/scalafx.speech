@@ -16,4 +16,6 @@ class StoreTest extends AnyFunSuite with Matchers:
 
     store.readFile(mp3).nonEmpty shouldBe true
 
+    store.readUri(mp3).nonEmpty shouldBe true
+
     store.listFiles.length shouldBe 1

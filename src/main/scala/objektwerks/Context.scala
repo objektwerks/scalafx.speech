@@ -18,7 +18,7 @@ final class Context(config: Config):
   def imageViewSpeech: ImageView = loadImageView("/image/speech.png")
   def imageAppIcon: Image = Image(Image.getClass.getResourceAsStream("/image/icon.png"))
 
-  def appMp3: String = Context.getClass.getResource("/app.mp3").toURI.toString
+  def uriAppMp3: String = getClass.getResource("/app.mp3").toURI.toString
 
   private def loadImageView(path: String): ImageView = new ImageView:
     image = Image(Image.getClass.getResourceAsStream(path))

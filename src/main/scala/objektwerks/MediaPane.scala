@@ -8,11 +8,14 @@ import scalafx.scene.media.{Media, MediaPlayer, MediaView}
 
 final class MediaPane(context: Context, store: Store, speech: Speech) extends HBox:
   val media = Media(context.uriAppMp3)
-  val mediaPlayer = new MediaPlayer(media):
-    autoPlay = true
+  val mediaPlayer = new MediaPlayer(media)
   val mediaView = MediaView(mediaPlayer)
   
-  val labelJoke = Label(context.labelJoke)
+  val labelJoke = new Label():
+    prefHeight = 25
+    prefWidth = 100
+    text = context.labelJoke
+
   val textJoke = Label("")
   val buttonJoke = new Button():
     graphic = context.imageViewSpeech

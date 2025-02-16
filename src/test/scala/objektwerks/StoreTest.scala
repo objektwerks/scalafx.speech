@@ -10,4 +10,4 @@ class StoreTest extends AnyFunSuite with Matchers:
 
     val store = Store()
     val uri = store.writeFile(bytes, "test.mp3")
-    println(uri)
+    println(s"*** File URI: $uri")

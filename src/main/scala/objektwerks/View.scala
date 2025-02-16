@@ -4,9 +4,8 @@ import scalafx.geometry.Insets
 import scalafx.scene.Scene
 import scalafx.scene.layout.VBox
 
-final class View(context: Context, model: Model):
+final class View(context: Context):
   println(context)
-  println(model)
 
   val rootPane = new VBox:
     spacing = 6

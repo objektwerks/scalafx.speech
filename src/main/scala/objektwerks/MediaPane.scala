@@ -10,7 +10,10 @@ import scalafx.scene.media.{Media, MediaPlayer, MediaView}
 final class MediaPane(context: Context,
                       store: Store,
                       speech: Speech) extends VBox:
-  val mediaView = MediaView( MediaPlayer( Media(context.uriAppMp3) ) )
+  val media = Media(context.uriAppMp3)
+  val mediaPlayer = new MediaPlayer(media):
+    autoPlay = true
+  val mediaView = MediaView(mediaPlayer)
   
   val labelJoke = new Label():
     prefHeight = 25

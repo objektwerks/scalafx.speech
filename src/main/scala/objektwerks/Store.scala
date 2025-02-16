@@ -35,4 +35,12 @@ final class Store extends LazyLogging:
       logger.info(s"Write file: $uri")
       uri
 
+  def listFiles: List[String] =
+    supervised:
+      assertNotInFxThread
+      os.list(filesPath)
+        .filter { path => path.baseName.nonEmpty }
+        .map { path => s"${path.baseName}.mp3" }
+        .toList
+
   def assertNotInFxThread: Unit = assert( !Platform.isFxApplicationThread, "Store operation called on Fx thread!" )

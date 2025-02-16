@@ -31,6 +31,7 @@ final class MediaPane(context: Context,
     text = context.jokeButton
     onAction = { _ =>
       val joke = getJoke(context)
+      textJoke.text = joke
       speech.textToSpeech(joke) match
         case Left(error) => textJoke.text = error.getMessage
         case Right(bytes) => 

@@ -4,7 +4,7 @@ import java.time.Instant
 
 import scalafx.geometry.Insets
 import scalafx.scene.control.{Button, Label, TextArea}
-import scalafx.scene.layout.HBox
+import scalafx.scene.layout.{HBox, Priority}
 import scalafx.scene.media.{Media, MediaPlayer, MediaView}
 
 final class MediaPane(context: Context, store: Store, speech: Speech) extends HBox:
@@ -42,3 +42,5 @@ final class MediaPane(context: Context, store: Store, speech: Speech) extends HB
   padding = Insets(3, 3, 3, 3)
   spacing = 6
   children = List(labelJoke, textJoke, mediaView, buttonJoke)
+
+  HBox.setHgrow(this, Priority.Always)

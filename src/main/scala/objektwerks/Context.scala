@@ -15,8 +15,10 @@ final class Context(config: Config):
 
   val labelJoke = config.getString("label.joke")
 
-  def imageViewSpeech = loadImageView("/image/speech.png")
-  def imageAppIcon = Image(Image.getClass.getResourceAsStream("/image/icon.png"))
+  def imageViewSpeech: ImageView = loadImageView("/image/speech.png")
+  def imageAppIcon: Image = Image(Image.getClass.getResourceAsStream("/image/icon.png"))
+
+  def appMp3: String = Context.getClass.getResource("/app.mp3").toURI.toString
 
   private def loadImageView(path: String): ImageView = new ImageView:
     image = Image(Image.getClass.getResourceAsStream(path))

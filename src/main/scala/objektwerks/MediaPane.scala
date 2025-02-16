@@ -38,4 +38,5 @@ final class MediaPane(context: Context, store: Store, speech: Speech) extends HB
           player.play()
     }
 
+  spacing = 6
   children = List(labelJoke, textJoke, mediaView, buttonJoke)

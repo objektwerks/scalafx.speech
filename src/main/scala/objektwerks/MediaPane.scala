@@ -28,11 +28,6 @@ final class MediaPane(context: Context,
     prefWidth = 300
     text = ""
 
-  val labelPlayer = new Label():
-    prefHeight = 25
-    prefWidth = 50
-    text = context.labelPlayer
-
   val buttonJoke = new Button():
     prefHeight = 25
     prefWidth = 100
@@ -53,6 +48,6 @@ final class MediaPane(context: Context,
 
   padding = Insets(3, 3, 3, 3)
   spacing = 6
-  children = List(labelJoke, textJoke, labelPlayer, mediaView, buttonJoke)
+  children = List(labelJoke, textJoke, mediaView, buttonJoke)
 
   VBox.setVgrow(this, Priority.Always)

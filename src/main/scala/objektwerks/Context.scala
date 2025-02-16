@@ -9,6 +9,9 @@ final class Context(config: Config):
   val windowWidth = config.getDouble("window.width")
   val windowHeight = config.getDouble("window.height")
 
+  val jokeUrl = config.getString("joke.url")
+  val jokeError = config.getString("joke.error")
+
   def imageViewSpeech = loadImageView("/image/speech.png")
   def imageAppIcon = Image(Image.getClass.getResourceAsStream("/image/icon.png"))
 

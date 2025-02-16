@@ -19,7 +19,9 @@ final class Store extends LazyLogging:
   def removeFilesPathDir(path: Path): Unit =
     supervised:
       assertNotInFxThread
-      if os.exists(path) then os.remove.all(path)
+      if os.exists(path) then
+        logger.info(s"Remove files path dir.")
+        os.remove.all(path)
 
   def makeFilesPathDir(path: Path): Unit =
     supervised:

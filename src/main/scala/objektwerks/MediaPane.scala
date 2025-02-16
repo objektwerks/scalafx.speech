@@ -16,7 +16,11 @@ final class MediaPane(context: Context, store: Store, speech: Speech) extends HB
     prefWidth = 100
     text = context.labelJoke
 
-  val textJoke = Label("")
+  val textJoke = new Label():
+    prefHeight = 50
+    prefWidth = 300
+    text = ""
+
   val buttonJoke = new Button():
     graphic = context.imageViewSpeech
     text = context.jokeButton

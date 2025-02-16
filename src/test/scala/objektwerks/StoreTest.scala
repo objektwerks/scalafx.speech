@@ -12,7 +12,7 @@ class StoreTest extends AnyFunSuite with Matchers:
     val store = Store()
     
     val uri = store.writeFile(bytes, mp3)
-    println(s"*** File URI: $uri")
+    println(s"*** File uri: $uri")
 
     store.readFile(mp3).nonEmpty shouldBe true
 

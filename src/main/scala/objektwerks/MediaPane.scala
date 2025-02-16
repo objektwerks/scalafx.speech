@@ -3,7 +3,8 @@ package objektwerks
 import java.time.Instant
 
 import scalafx.geometry.Insets
-import scalafx.scene.control.{Button, Label, TextArea}
+import scalafx.scene.control.{Alert, Button, Label, TextArea}
+import scalafx.scene.control.Alert.AlertType
 import scalafx.scene.layout.{Priority, VBox}
 import scalafx.scene.media.{Media, MediaPlayer}
 
@@ -33,7 +34,7 @@ final class MediaPane(context: Context,
       val joke = getJoke(context)
       textJoke.text = joke
       speech.textToSpeech(joke) match
-        case Left(error) => textJoke.text = error.getMessage
+        case Left(error) => Alert(AlertType.Error, error.getMessage).showAndWait()
         case Right(bytes) => 
           val uri = store.writeFile(bytes, s"${Instant.now.toString}.mp3")
           mediaPlayer.dispose()

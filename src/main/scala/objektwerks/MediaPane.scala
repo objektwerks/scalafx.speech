@@ -35,6 +35,7 @@ final class MediaPane(context: Context, store: Store, speech: Speech) extends HB
           val uri = store.writeFile(bytes, s"${Instant.now.toString}.mp3")
           val media = Media(uri)
           val player = MediaPlayer(media)
+          mediaView.mediaPlayer.value.dispose()
           mediaView.mediaPlayer.value = player
           player.play()
     }

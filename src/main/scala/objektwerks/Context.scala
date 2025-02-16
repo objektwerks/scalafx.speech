@@ -16,10 +16,10 @@ final class Context(config: Config):
   val labelJoke = config.getString("label.joke")
   val labelPlayer = config.getString("label.player")
 
+  def loadAppMp3: Array[Byte] = getClass.getResourceAsStream("/app.mp3").readAllBytes()
+
   def imageViewSpeech: ImageView = loadImageView("/image/speech.png")
   def imageAppIcon: Image = Image(Image.getClass.getResourceAsStream("/image/icon.png"))
-
-  def uriAppMp3: String = getClass.getResource("/app.mp3").toURI.toString
 
   private def loadImageView(path: String): ImageView = new ImageView:
     image = Image(Image.getClass.getResourceAsStream(path))

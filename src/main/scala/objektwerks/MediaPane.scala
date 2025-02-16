@@ -10,7 +10,10 @@ import scalafx.scene.media.{Media, MediaPlayer, MediaView}
 final class MediaPane(context: Context,
                       store: Store,
                       speech: Speech) extends VBox:
-  val media = Media(context.uriAppMp3)
+  val bytes = context.loadAppMp3
+  val uri = store.writeFile(bytes, "app.mp3")
+  println(s"Media Pane default uri: $uri")
+  val media = Media(uri)
   val mediaPlayer = new MediaPlayer(media):
     autoPlay = true
   val mediaView = new MediaView(mediaPlayer):

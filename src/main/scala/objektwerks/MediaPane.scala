@@ -7,7 +7,9 @@ import scalafx.scene.control.{Button, Label, TextArea}
 import scalafx.scene.layout.{Priority, VBox}
 import scalafx.scene.media.{Media, MediaPlayer, MediaView}
 
-final class MediaPane(context: Context, store: Store, speech: Speech) extends VBox:
+final class MediaPane(context: Context,
+                      store: Store,
+                      speech: Speech) extends VBox:
   val media = Media(context.uriAppMp3)
   val mediaPlayer = MediaPlayer(media)
   val mediaView = MediaView(mediaPlayer)

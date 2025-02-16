@@ -16,7 +16,8 @@ final class Context(config: Config):
   val labelJoke = config.getString("label.joke")
   val labelPlayer = config.getString("label.player")
 
-  def loadAppMp3: Array[Byte] = getClass.getResourceAsStream("/app.mp3").readAllBytes()
+  val appMp3 = "app.mp3"
+  def loadAppMp3: Array[Byte] = getClass.getResourceAsStream(s"/$appMp3").readAllBytes()
 
   def imageViewSpeech: ImageView = loadImageView("/image/speech.png")
   def imageAppIcon: Image = Image(Image.getClass.getResourceAsStream("/image/icon.png"))

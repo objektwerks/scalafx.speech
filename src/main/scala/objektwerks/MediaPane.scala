@@ -7,3 +7,4 @@ final class MediaPane(context: Context, store: Store) extends HBox:
   println(store)
   
   val labelText = Label(context.labelText)
+  val labelSpeech = Label("")

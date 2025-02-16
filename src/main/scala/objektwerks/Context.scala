@@ -11,6 +11,7 @@ final class Context(config: Config):
 
   val jokeUrl = config.getString("joke.url")
   val jokeError = config.getString("joke.error")
+  val jokeButton = config.getString("joke.button")
 
   def imageViewSpeech = loadImageView("/image/speech.png")
   def imageAppIcon = Image(Image.getClass.getResourceAsStream("/image/icon.png"))

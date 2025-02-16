@@ -10,6 +10,7 @@ class StoreTest extends AnyFunSuite with Matchers:
     val bytes = os.read(path).getBytes()
 
     val store = Store()
+    
     val uri = store.writeFile(bytes, mp3)
     println(s"*** File URI: $uri")
 

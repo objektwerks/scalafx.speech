@@ -14,7 +14,6 @@ final class Context(config: Config):
   val jokeButton = config.getString("joke.button")
 
   val labelJoke = config.getString("label.joke")
-  val labelPlayer = config.getString("label.player")
 
   val appMp3 = "app.mp3"
   def loadAppMp3: Array[Byte] = getClass.getResourceAsStream(s"/$appMp3").readAllBytes()

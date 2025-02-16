@@ -11,3 +11,5 @@ class StoreTest extends AnyFunSuite with Matchers:
     val store = Store()
     val uri = store.writeFile(bytes, "test.mp3")
     println(s"*** File URI: $uri")
+
+    store.listFiles.length shouldBe 1

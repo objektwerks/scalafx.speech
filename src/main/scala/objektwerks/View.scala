@@ -4,8 +4,8 @@ import scalafx.geometry.Insets
 import scalafx.scene.Scene
 import scalafx.scene.layout.VBox
 
-final class View(context: Context):
-  val mediaPane = MediaPane(context)
+final class View(context: Context, store: Store):
+  val mediaPane = MediaPane(context, store)
 
   val rootPane = new VBox:
     spacing = 6

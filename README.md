@@ -4,10 +4,9 @@ ScalaFx Speech
 
 Todo
 ----
-1. Media support crashes JDK 23.
-2. MediaView not displaying.
-3. Setup Google account.
-4. Setup Google speech credentials.
+1. MediaView not displaying.
+2. Setup Google account.
+3. Setup Google speech credentials.
 
 Build
 -----

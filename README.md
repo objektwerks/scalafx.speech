@@ -2,6 +2,12 @@ ScalaFx Speech
 --------------
 >ScalaFx text-to-speech app using ScalaFx, Os-Lib, Ox, Google Speech and Scala 3.
 
+Todo
+----
+1. MediaView not displaying.
+2. Setup Google account.
+3. Setup Google speech credentials.
+
 Build
 -----
 1. sbt clean compile

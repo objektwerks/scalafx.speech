@@ -5,12 +5,12 @@ import scalafx.scene.Scene
 import scalafx.scene.layout.VBox
 
 final class View(context: Context):
-  println(context)
+  val mediaPane = MediaPane(context)
 
   val rootPane = new VBox:
     spacing = 6
     padding = Insets(6)
-    children = List()
+    children = List(mediaPane)
 
   val scene = new Scene:
     root = rootPane

@@ -45,6 +45,7 @@ final class Store extends LazyLogging:
   def listFiles: List[String] =
     supervised:
       assertNotInFxThread
+      logger.info(s"List files.")
       os.list(filesPath)
         .filter { path => path.baseName.nonEmpty }
         .map { path => s"${path.baseName}.mp3" }

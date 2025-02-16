@@ -10,3 +10,6 @@ final class MediaPane(context: Context, store: Store) extends HBox:
   val textJoke = Label("")
   val buttonJoke = new Button():
     text = context.jokeButton
+    onAction = { _ =>
+      
+    }

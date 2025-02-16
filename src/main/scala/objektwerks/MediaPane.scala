@@ -11,8 +11,7 @@ final class MediaPane(context: Context,
                       store: Store,
                       speech: Speech) extends VBox:
   val uri = store.writeFile(context.loadAppMp3, context.appMp3)
-  val media = Media(uri)
-  var mediaPlayer = new MediaPlayer(media):
+  var mediaPlayer = new MediaPlayer( Media(uri) ):
     autoPlay = true
   
   val labelJoke = new Label():
@@ -35,10 +34,9 @@ final class MediaPane(context: Context,
       speech.textToSpeech(joke) match
         case Left(error) => textJoke.text = error.getMessage
         case Right(bytes) => 
-          mediaPlayer.dispose()
           val uri = store.writeFile(bytes, s"${Instant.now.toString}.mp3")
-          val media = Media(uri)
-          mediaPlayer = new MediaPlayer(media):
+          mediaPlayer.dispose()
+          mediaPlayer = new MediaPlayer( Media(uri) ):
             autoPlay = true
     }
 

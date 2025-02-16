@@ -2,7 +2,7 @@ package objektwerks
 
 import java.time.Instant
 
-import scalafx.scene.control.{Button, Label}
+import scalafx.scene.control.{Button, Label, TextArea}
 import scalafx.scene.layout.HBox
 import scalafx.scene.media.{Media, MediaPlayer, MediaView}
 
@@ -16,7 +16,7 @@ final class MediaPane(context: Context, store: Store, speech: Speech) extends HB
     prefWidth = 100
     text = context.labelJoke
 
-  val textJoke = new Label():
+  val textJoke = new TextArea():
     prefHeight = 50
     prefWidth = 300
     text = ""

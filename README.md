@@ -4,9 +4,8 @@ ScalaFx Speech
 
 Todo
 ----
-1. MediaView not displaying.
-2. Setup Google account.
-3. Setup Google speech credentials.
+1. Setup Google account.
+2. Setup Google speech credentials.
 
 Build
 -----

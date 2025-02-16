@@ -15,7 +15,6 @@ Run
 ---
 1. sbt run
 
-
 Resources
 ---------
 * [ScalaFx](https://www.scalafx.org/)

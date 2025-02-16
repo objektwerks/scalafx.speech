@@ -1,4 +1,6 @@
 package objektwerks
 
-final class MediaPane(context: Context):
+import scalafx.scene.layout.HBox
+
+final class MediaPane(context: Context) extends HBox:
   println(context)

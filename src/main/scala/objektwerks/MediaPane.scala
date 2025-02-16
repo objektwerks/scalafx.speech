@@ -4,26 +4,26 @@ import java.time.Instant
 
 import scalafx.geometry.Insets
 import scalafx.scene.control.{Button, Label, TextArea}
-import scalafx.scene.layout.{HBox, Priority}
+import scalafx.scene.layout.{Priority, VBox}
 import scalafx.scene.media.{Media, MediaPlayer, MediaView}
 
-final class MediaPane(context: Context, store: Store, speech: Speech) extends HBox:
+final class MediaPane(context: Context, store: Store, speech: Speech) extends VBox:
   val media = Media(context.uriAppMp3)
   val mediaPlayer = MediaPlayer(media)
   val mediaView = MediaView(mediaPlayer)
   
   val labelJoke = new Label():
-    prefHeight = 50
+    prefHeight = 25
     prefWidth = 50
     text = context.labelJoke
 
   val textJoke = new TextArea():
-    prefHeight = 50
+    prefHeight = 100
     prefWidth = 300
     text = ""
 
   val buttonJoke = new Button():
-    prefHeight = 50
+    prefHeight = 25
     prefWidth = 100
     graphic = context.imageViewSpeech
     text = context.jokeButton
@@ -44,4 +44,4 @@ final class MediaPane(context: Context, store: Store, speech: Speech) extends HB
   spacing = 6
   children = List(labelJoke, textJoke, mediaView, buttonJoke)
 
-  HBox.setHgrow(this, Priority.Always)
+  VBox.setVgrow(this, Priority.Always)

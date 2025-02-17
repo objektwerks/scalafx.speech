@@ -1,6 +1,6 @@
 ScalaFx Speech
 --------------
->ScalaFx text-to-speech app using ScalaFx, Os-Lib, Ox, Google Speech and Scala 3.
+>ScalaFx text-to-speech app using ScalaFx, Os-Lib, Ox, Google Cloud Text-to-Speech and Scala 3.
 
 Todo
 ----

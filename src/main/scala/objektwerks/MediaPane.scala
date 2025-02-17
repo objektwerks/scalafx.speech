@@ -34,7 +34,7 @@ final class MediaPane(context: Context,
       val joke = getJoke(context)
       textJoke.text = joke
       disable = true
-      speech.textToSpeech(joke) match
+      speech.textToSpeech(joke) match // IOException thrown here until I setup a google account! :)
         case Left(error) => Alert(AlertType.Error, error.getMessage).showAndWait()
         case Right(bytes) => 
           val uri = store.writeFile(bytes, s"${Instant.now.toString}.mp3")

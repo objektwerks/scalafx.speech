@@ -1,6 +1,6 @@
 ScalaFx Speech
 --------------
->ScalaFx text-to-speech prototype using ScalaFx, Os-Lib, Ox, Google Cloud Text-to-Speech and Scala 3.
+>ScalaFx text-to-speech ***prototype*** using ScalaFx, Os-Lib, Ox, Google Cloud Text-to-Speech and Scala 3.
 
 >Naturally, the text is sourced from this world renown api: https://api.chucknorris.io/jokes/random :)
 

@@ -4,7 +4,7 @@ ScalaFx Speech
 
 Todo
 ----
-1. Setup Google account.
+1. Setup google account.
 2. Install [Google CLI](https://cloud.google.com/sdk/docs/install)
 3. Init [Google CLI](https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment)
     1. gcloud init

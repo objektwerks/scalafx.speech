@@ -1,6 +1,6 @@
 name := "scalafx.speech"
 organization := "objektwerks"
-version := "0.3-SNAPSHOT"
+version := "0.3"
 scalaVersion := "3.6.4-RC1"
 libraryDependencies ++= {
   Seq(

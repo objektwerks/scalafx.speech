@@ -13,6 +13,10 @@ Google Account
 2. Install [Google CLI](https://cloud.google.com/sdk/docs/install)
 3. Init [Google CLI](https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment)
 
+Media Player
+------------
+>While ScalaFx is a nice UI library to work with --- the media player is a piece of work. Read all the javadoc!
+
 Build
 -----
 1. sbt clean compile

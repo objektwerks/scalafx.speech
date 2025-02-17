@@ -2,7 +2,7 @@ ScalaFx Speech
 --------------
 >ScalaFx text-to-speech app using ScalaFx, Os-Lib, Ox, Google Cloud Text-to-Speech and Scala 3.
 
->The text is sourced from here: https://api.chucknorris.io/jokes/random
+>The text is sourced from this api: https://api.chucknorris.io/jokes/random
 
 Todo
 ----

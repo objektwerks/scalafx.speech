@@ -44,7 +44,6 @@ final class MediaPane(context: Context,
             status.addListener { (_, _, status) =>
               if status == MediaPlayer.Status.Stopped then disable = false
             }
-            onError.onChange { (_, _, _) => disable = false }
     }
 
   padding = Insets(3, 3, 3, 3)

@@ -10,7 +10,7 @@ Google Account
 
 >For local development authentication:
 1. Create google account
-2. Install [Google CLI](https://cloud.google.com/sdk/docs/install)
+2. Install [google cli](https://cloud.google.com/sdk/docs/install)
 3. Init [Google CLI](https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment)
 
 Media Player

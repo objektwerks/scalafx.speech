@@ -12,8 +12,6 @@ Google Account
 1. Setup google account.
 2. Install [Google CLI](https://cloud.google.com/sdk/docs/install)
 3. Init [Google CLI](https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment)
-    1. gcloud init
-    2. gcloud auth application-default login
 
 Build
 -----

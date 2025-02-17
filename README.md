@@ -6,7 +6,7 @@ ScalaFx Speech
 
 Google Account
 --------------
->Due to the intrusive nature of a Google account, I chose not to setup an account.
+>Due to the intrusive nature of a Google account, I chose not to setup an account. But trust me it works! ;)
 
 >For local development authentication:
 1. Setup google account.

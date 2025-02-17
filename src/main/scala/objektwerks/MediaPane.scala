@@ -33,6 +33,7 @@ final class MediaPane(context: Context,
     onAction = { _ =>
       val joke = getJoke(context)
       textJoke.text = joke
+      disable = true
       speech.textToSpeech(joke) match
         case Left(error) => Alert(AlertType.Error, error.getMessage).showAndWait()
         case Right(bytes) => 
@@ -40,6 +41,9 @@ final class MediaPane(context: Context,
           mediaPlayer.dispose()
           mediaPlayer = new MediaPlayer( Media(uri) ):
             autoPlay = true
+            status.addListener { (_, _, status) =>
+              if status == MediaPlayer.Status.Stopped then disable = false
+            }
     }
 
   padding = Insets(3, 3, 3, 3)

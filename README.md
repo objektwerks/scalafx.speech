@@ -9,7 +9,7 @@ Google Account
 >Due to the intrusive nature of a Google account, I chose not to setup an account. But trust me it works! ;)
 
 >For local development authentication:
-1. Create google account.
+1. Create google account
 2. Install [Google CLI](https://cloud.google.com/sdk/docs/install)
 3. Init [Google CLI](https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment)
 

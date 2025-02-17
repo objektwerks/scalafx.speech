@@ -15,7 +15,7 @@ Google Account
 
 Media Player
 ------------
->While ScalaFx is a nice UI library to work with --- the media player is a piece of work. Read all the javadoc!
+>While ScalaFx is a nice UI library to work with --- the media player is a piece of work. Read the javadoc!
 
 Build
 -----

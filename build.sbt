@@ -1,13 +1,13 @@
 name := "scalafx.speech"
 organization := "objektwerks"
 version := "0.7-SNAPSHOT"
-scalaVersion := "3.6.4" // Scala 3.7.0-RC3 breaks ScalaFx!
+scalaVersion := "3.6.4" // Scala 3.7.0-RC4 breaks ScalaFx!
 libraryDependencies ++= {
   Seq(
     "com.google.cloud" % "google-cloud-texttospeech" % "2.59.0",
     "com.lihaoyi" %% "os-lib" % "0.11.5-M5",
     "com.softwaremill.ox" %% "core" % "0.5.13",
-    "org.scalafx" %% "scalafx" % "23.0.1-R34",
+    "org.scalafx" %% "scalafx" % "24.0.0-R35",
     "com.lihaoyi" %% "ujson" % "4.1.0",
     "com.typesafe" % "config" % "1.4.3",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",

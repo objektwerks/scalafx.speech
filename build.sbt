@@ -5,7 +5,7 @@ scalaVersion := "3.6.4" // Scala 3.7.1-RC1 breaks ScalaFx!
 libraryDependencies ++= {
   Seq(
     "com.google.cloud" % "google-cloud-texttospeech" % "2.59.0",
-    "com.lihaoyi" %% "os-lib" % "0.11.5-M7",
+    "com.lihaoyi" %% "os-lib" % "0.11.5-M8",
     "com.softwaremill.ox" %% "core" % "0.5.13",
     "org.scalafx" %% "scalafx" % "24.0.0-R35",
     "com.lihaoyi" %% "ujson" % "4.1.0",

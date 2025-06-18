@@ -6,7 +6,7 @@ libraryDependencies ++= {
   Seq(
     "com.google.cloud" % "google-cloud-texttospeech" % "2.59.0",
     "com.lihaoyi" %% "os-lib" % "0.11.5-M9",
-    "com.softwaremill.ox" %% "core" % "0.6.0",
+    "com.softwaremill.ox" %% "core" % "0.6.1",
     "org.scalafx" %% "scalafx" % "24.0.0-R35",
     "com.lihaoyi" %% "ujson" % "4.2.1",
     "com.typesafe" % "config" % "1.4.3",

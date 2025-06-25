@@ -1,7 +1,7 @@
 name := "scalafx.speech"
 organization := "objektwerks"
 version := "0.7-SNAPSHOT"
-scalaVersion := "3.6.4" // Scala 3.7.1 still breaks ScalaFx!
+scalaVersion := "3.7.2-RC1"
 libraryDependencies ++= {
   Seq(
     "com.google.cloud" % "google-cloud-texttospeech" % "2.59.0",
@@ -16,7 +16,9 @@ libraryDependencies ++= {
   )
 }
 scalacOptions ++= Seq(
-  "-Wunused:all"
+  "-Wunused:all",
+  // Silences 3.7.0+ implicit using warnings:
+  "-Wconf:msg=Implicit parameters should be provided with a `using` clause:s"
 )
 outputStrategy := Some(StdoutOutput)
 parallelExecution := false

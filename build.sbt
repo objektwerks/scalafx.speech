@@ -1,7 +1,7 @@
 name := "scalafx.speech"
 organization := "objektwerks"
 version := "0.7-SNAPSHOT"
-scalaVersion := "3.8.0-RC4"
+scalaVersion := "3.8.0-RC5"
 libraryDependencies ++= {
   Seq(
     "com.google.cloud" % "google-cloud-texttospeech" % "2.59.0",

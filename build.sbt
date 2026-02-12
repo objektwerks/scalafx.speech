@@ -5,7 +5,7 @@ scalaVersion := "3.8.2-RC1"
 libraryDependencies ++= {
   Seq(
     "com.google.cloud" % "google-cloud-texttospeech" % "2.59.0",
-    "com.lihaoyi" %% "os-lib" % "0.11.9-M4",
+    "com.lihaoyi" %% "os-lib" % "0.11.9-M5",
     "com.softwaremill.ox" %% "core" % "1.0.3",
     "org.scalafx" %% "scalafx" % "24.0.2-R36",
     "com.lihaoyi" %% "ujson" % "4.4.2",

@@ -7,7 +7,7 @@ libraryDependencies ++= {
     "com.google.cloud" % "google-cloud-texttospeech" % "2.59.0",
     "com.lihaoyi" %% "os-lib" % "0.11.9-M8",
     "com.softwaremill.ox" %% "core" % "1.0.9",
-    "org.scalafx" %% "scalafx" % "26.0.0-R38",
+    "org.scalafx" %% "scalafx" % "27.0.0-R39",
     "com.lihaoyi" %% "ujson" % "4.4.3",
     "com.typesafe" % "config" % "1.4.3",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
